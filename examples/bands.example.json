@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "bands": [
+    {
+      "index": 0,
+      "file": "capture_uv.tif",
+      "name": "UV 365 nm",
+      "wavelength_nm": 365
+    },
+    {
+      "index": 1,
+      "file": "capture_blue.tif",
+      "name": "Blue 450 nm",
+      "wavelength_nm": 450
+    },
+    {
+      "index": 2,
+      "file": "capture_red.tif",
+      "name": "Red 650 nm",
+      "wavelength_nm": 650
+    }
+  ]
+}
