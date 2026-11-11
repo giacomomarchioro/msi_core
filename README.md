@@ -244,6 +244,20 @@ from msi_core.operations import subtraction
 items = apply_pairwise(subtraction.run, stack, ordered=True)
 ```
 
+`apply_pairwise` keeps all results in memory. To process one pair at a time,
+use `iter_pairwise`; the caller controls persistence and output naming:
+
+```python
+from msi_core import iter_pairwise, save_result
+
+for item in iter_pairwise(subtraction.run, stack, ordered=False):
+    save_result(item.result, f"output/{item.first_index}_{item.second_index}")
+```
+
+`ordered=False` visits each combination once; `ordered=True` visits both
+directions. Neither mode includes self-pairs. Iterator errors are raised while
+consuming it, and previously saved outputs are not rolled back.
+
 ## Operation metadata and scientific attribution
 
 Every operation module exposes:

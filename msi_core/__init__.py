@@ -23,7 +23,7 @@ from .io import (
     validate_manifest,
     write_manifest,
 )
-from .pairwise import PairwiseResult, apply_pairwise
+from .pairwise import PairwiseResult, apply_pairwise, iter_pairwise
 from .region import Region
 from .registry import (
     OperationRegistry,
@@ -68,6 +68,7 @@ __all__ = [
     "create_manifest",
     "default_registry",
     "inspect_tiff_folder",
+    "iter_pairwise",
     "load_tiff_folder",
     "read_manifest",
     "render_grayscale",
